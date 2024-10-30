@@ -1,0 +1,137 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT TEI (teiHeader,text)>
+<!ATTLIST TEI xml:lang NMTOKEN #REQUIRED>
+
+<!ELEMENT teiHeader (fileDesc,profileDesc)>
+
+<!ELEMENT fileDesc (titleStmt,publicationStmt,sourceDesc)>
+
+<!ELEMENT titleStmt (title)>
+
+<!ELEMENT publicationStmt (authority,availability)>
+
+<!ELEMENT authority (#PCDATA)>
+
+<!ELEMENT availability (licence)>
+<!ATTLIST availability status NMTOKEN #REQUIRED>
+
+<!ELEMENT sourceDesc (msDesc)>
+
+<!ELEMENT msDesc (msIdentifier)>
+
+<!ELEMENT licence (p)+>
+<!ATTLIST licence target CDATA #REQUIRED>
+
+<!ELEMENT msIdentifier (country,settlement,repository,idno)>
+
+<!ELEMENT country (#PCDATA)>
+<!ATTLIST country key NMTOKEN #IMPLIED>
+
+<!ELEMENT settlement (#PCDATA)>
+<!ATTLIST settlement ref CDATA #IMPLIED>
+<!ATTLIST settlement type NMTOKEN #IMPLIED>
+
+<!ELEMENT repository (#PCDATA)>
+<!ATTLIST repository xml:lang NMTOKEN #REQUIRED>
+
+<!ELEMENT idno (#PCDATA)>
+
+<!ELEMENT profileDesc (correspDesc)+>
+
+<!ELEMENT correspDesc (correspAction+,correspContext?)>
+<!ATTLIST correspDesc xml:id NMTOKEN #REQUIRED>
+
+<!ELEMENT correspAction (persName,placeName,date)>
+<!ATTLIST correspAction type NMTOKEN #REQUIRED>
+
+<!ELEMENT correspContext (ref)>
+
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref target CDATA #REQUIRED>
+<!ATTLIST ref type NMTOKEN #REQUIRED>
+
+<!ELEMENT text (body,back)>
+
+<!ELEMENT body (div)>
+
+<!ELEMENT div (head,opener,p+,closer)>
+<!ATTLIST div corresp CDATA #REQUIRED>
+<!ATTLIST div type NMTOKEN #REQUIRED>
+<!ATTLIST div divxml:lang NMTOKEN #REQUIRED>
+
+<!ELEMENT head (title)>
+
+<!ELEMENT title (#PCDATA|hi)*>
+
+<!ELEMENT opener (pb,dateline,address,lb,salute)>
+
+<!ELEMENT pb EMPTY>
+<!ATTLIST pb n CDATA #REQUIRED>
+
+<!ELEMENT dateline (#PCDATA|date|placeName)*>
+
+<!ELEMENT date (#PCDATA|hi)*>
+<!ATTLIST date when NMTOKEN #IMPLIED>
+
+<!ELEMENT hi (#PCDATA)>
+<!ATTLIST hi rend NMTOKEN #REQUIRED>
+
+<!ELEMENT salute (#PCDATA|lb|persName)*>
+
+<!ELEMENT p (#PCDATA|lb|orgName|persName|placeName)*>
+<!ATTLIST p n CDATA #IMPLIED>
+
+<!ELEMENT lb EMPTY>
+
+<!ELEMENT closer (salute,signed,address)>
+
+<!ELEMENT signed (#PCDATA)>
+
+<!ELEMENT back (head,listPerson,listPlace,listOrg)>
+
+<!ELEMENT listPerson (person)+>
+
+<!ELEMENT person (persName,birth,death)>
+<!ATTLIST person xml:id NMTOKEN #REQUIRED>
+
+<!ELEMENT persName (#PCDATA|roleName|forename|name|surname)*>
+<!ATTLIST persName ref CDATA #IMPLIED>
+<!ATTLIST persName xml:lang NMTOKEN #IMPLIED>
+
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT forename (#PCDATA)>
+
+<!ELEMENT surname (#PCDATA)>
+
+<!ELEMENT roleName (#PCDATA)>
+
+<!ELEMENT birth (date)>
+
+<!ELEMENT death (date)>
+
+<!ELEMENT listPlace (place)+>
+
+<!ELEMENT place (placeName)>
+<!ATTLIST place xml:id NMTOKEN #REQUIRED>
+
+<!ELEMENT placeName (#PCDATA|address|lb|settlement)*>
+<!ATTLIST placeName ref CDATA #IMPLIED>
+<!ATTLIST placeName xml:lang NMTOKEN #IMPLIED>
+
+<!ELEMENT address (persName,roleName,street,settlement,country)?>
+
+<!ELEMENT street (#PCDATA|num)*>
+
+<!ELEMENT num (#PCDATA)>
+
+<!ELEMENT listOrg (org)+>
+
+<!ELEMENT org (orgName,desc)>
+<!ATTLIST org xml:id NMTOKEN #REQUIRED>
+
+<!ELEMENT orgName (#PCDATA)>
+<!ATTLIST orgName ref CDATA #IMPLIED>
+
+<!ELEMENT desc (#PCDATA)>

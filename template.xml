@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<!DOCTYPE TEI SYSTEM "schema.dtd">
+
+<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Paul Rémond's Correspondence</title>
+         </titleStmt>
+         <publicationStmt>
+            <authority>Amélie Dogan</authority>
+            <availability status="restricted">
+               <licence target="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <p>The Creative Commons Attribution-Noncommercial 4.0 International (CC BY-NC 4.0)
+                     Licence applies to this document.</p>
+                  <p>The licence was added on October 29, 2024.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <country>France</country>
+                  <settlement>Nice</settlement>
+                  <repository xml:lang="fr">Archives historiques du diocèse de Nice - Fonds Paul
+                     Rémond></repository>
+                  <idno>FR AEC / 06 - SC2 2R6, 2</idno>
+               </msIdentifier>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <correspDesc xml:id="corresp1">
+            <correspAction type="sent">
+               <persName xml:lang="fr" ref="#person1"
+                  ><name>name</name><surname>surname</surname></persName>
+               <placeName>
+                  <settlement type="city" ref="#place1">city</settlement>
+               </placeName>
+               <date when="1900-01-01">number<hi rend="superscript">th</hi> month year</date>
+            </correspAction>
+            <correspAction type="received">
+               <persName xml:lang="fr" ref="#person2"
+                  ><name>name</name><surname>surname</surname></persName>
+               <placeName xml:lang="fr">
+                  <address>
+                     <street><num>street number</num>, street name</street>
+                     <settlement type="city" ref="#place2">place</settlement>
+                     <country key="FR">France</country>
+                  </address>
+               </placeName>
+               <date>unknown</date>
+            </correspAction>
+         </correspDesc>
+
+         <correspDesc xml:id="corresp2">
+            <correspAction type="sent">
+               <persName xml:lang="fr" ref="#person2"
+                  ><name>name</name><surname>surname</surname></persName>
+               <placeName xml:lang="fr">
+                  <address>
+                     <street><num>street number</num>, street name</street>
+                     <settlement type="city" ref="#place2">place</settlement>
+                     <country key="FR">France</country>
+                  </address>
+               </placeName>
+               <date when="1900-01-01">number<hi rend="superscript">th</hi> month year</date>
+            </correspAction>
+            <correspAction type="received">
+               <persName xml:lang="fr" ref="#person1"
+                  ><name>name</name><surname>surname</surname></persName>
+               <placeName>
+                  <settlement type="city" ref="place1">place</settlement>
+               </placeName>
+               <date>unknown</date>
+            </correspAction>
+            <correspContext>
+               <ref type="prev" target="#corresp1">Previous letter of Person1 to Person2: 01 January
+                  1900</ref>
+            </correspContext>
+         </correspDesc>
+         <!-- Add new correspondances with new correspDesc elements -->
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xml:lang="fr" type="correspondence" corresp="#corresp1">
+            <head><title>Correspondence between Person1 and Person2 (number<hi rend="superscript"
+                     >th</hi> month year)</title></head>
+            <opener>
+               <pb n="1"/>
+               <dateline>
+                  <placeName>place</placeName>, <date when="1900-01-01">date</date>
+               </dateline>
+               <address>
+                  <street><num>street number</num>, street name</street>
+               </address>
+               <lb/><salute>Dear <persName ref="#person2">name</persName>,</salute>
+            </opener>
+
+            <p n="1"><lb/>A paragraph without any named entity</p>
+
+            <p n="2"><lb/>A paragraph with a <placeName ref="#place2">place</placeName>
+               <lb/>ans an <orgName ref="#org1">organisation</orgName>.</p>
+
+            <p n="3"><lb/>A paragraph with a <placeName>pla- <lb/>ce</placeName> between two lines
+               and a <persName ref="#person3">name of someone</persName>.</p>
+
+            <closer>
+               <salute><lb/>salutation</salute>
+               <signed>signature</signed>
+               <address>
+                  <persName>name</persName>
+                  <roleName>role</roleName>
+                  <street>street name</street>
+                  <settlement type="city" ref="#place2">city</settlement>
+                  <country key="FR"/>
+               </address>
+            </closer>
+         </div>
+         <!-- Add new correspondances with new div elements -->
+      </body>
+      <back>
+         <!-- Déclaration des entités nommées dans <back> -->
+         <head><title>Index</title></head>
+         <head><title>Person name</title></head>
+         <listPerson>
+            <person xml:id="person1">
+               <persName>
+                  <forename>forename</forename>
+                  <surname>surname</surname>
+                  <roleName>role</roleName>
+               </persName>
+               <birth>
+                  <date>date</date>
+               </birth>
+               <death>
+                  <date>date</date>
+               </death>
+            </person>
+            <person xml:id="person2">
+               <persName>
+                  <forename>forename</forename>
+                  <surname>surname</surname>
+                  <roleName>role</roleName>
+               </persName>
+               <birth>
+                  <date>date</date>
+               </birth>
+               <death>
+                  <date>date</date>
+               </death>
+            </person>
+            <person xml:id="person3">
+               <persName>
+                  <forename>forename</forename>
+                  <surname>surname</surname>
+                  <roleName>role</roleName>
+               </persName>
+               <birth>
+                  <date>date</date>
+               </birth>
+               <death>
+                  <date>date</date>
+               </death>
+            </person>
+         </listPerson>
+         <head><title>Place name</title></head>
+         <listPlace>
+            <place xml:id="place1">
+               <placeName>place</placeName>
+            </place>
+            <place xml:id="place2">
+               <placeName>place</placeName>
+            </place>
+            <place xml:id="place3">
+               <placeName>place</placeName>
+            </place>
+            <place xml:id="place4">
+               <placeName>place</placeName>
+            </place>
+         </listPlace>
+         <head><title>Organisation name</title></head>
+         <listOrg>
+            <org xml:id="org1">
+               <orgName>name</orgName>
+               <desc>description</desc>
+            </org>
+            <org xml:id="org2">
+               <orgName>name</orgName>
+               <desc>description</desc>
+            </org>
+         </listOrg>
+      </back>
+   </text>
+</TEI>
