@@ -1,4 +1,4 @@
-# Assignment_Modelling_humanities_data_with_TEI-XML
+# Encoding the correspondence of Paul Rémond with TEI-XML
 
 The project is based on the **study and organization of the correspondence of Paul Rémond**, Bishop of Nice from 1930 to 1963.
 
