@@ -37,7 +37,7 @@
 
 <!ELEMENT idno (#PCDATA)>
 
-<!ELEMENT profileDesc (correspDesc)+>
+<!ELEMENT profileDesc (correspDesc|textClass)+>
 
 <!ELEMENT correspDesc (correspAction+,correspContext?)>
 <!ATTLIST correspDesc xml:id ID #REQUIRED>
@@ -50,6 +50,16 @@
 <!ELEMENT ref (#PCDATA)>
 <!ATTLIST ref target CDATA #REQUIRED>
 <!ATTLIST ref type NMTOKEN #REQUIRED>
+
+<!ELEMENT textClass (keywords)>
+<!ATTLIST textClass corresp IDREF #REQUIRED>
+
+<!ELEMENT keywords (list)>
+<!ATTLIST keywords scheme NMTOKEN #REQUIRED>
+
+<!ELEMENT list (item+)>
+
+<!ELEMENT item (#PCDATA) >
 
 <!ELEMENT text (body,back)>
 

@@ -56,6 +56,15 @@
                <date>unknown</date>
             </correspAction>
          </correspDesc>
+         <textClass corresp="#corresp1">
+            <keywords scheme="#fr_RAMEAU">
+               <list>
+                  <item>item</item>
+                  <item>item</item>
+                  <item>item</item>
+               </list>
+            </keywords>
+         </textClass>
          <correspDesc xml:id="corresp2">
             <correspAction type="sent">
                <persName xml:lang="fr" ref="#person2"
@@ -82,6 +91,15 @@
                   1900</ref>
             </correspContext>
          </correspDesc>
+         <textClass corresp="#corresp2">
+            <keywords scheme="#fr_RAMEAU">
+               <list>
+                  <item>item</item>
+                  <item>item</item>
+                  <item>item</item>
+               </list>
+            </keywords>
+         </textClass>
          <!-- Add new correspondances with new correspDesc elements -->
       </profileDesc>
    </teiHeader>
