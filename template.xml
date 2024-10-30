@@ -36,16 +36,16 @@
       <profileDesc>
          <correspDesc xml:id="corresp1">
             <correspAction type="sent">
-               <persName xml:lang="fr" ref="#person1"
-                  ><name>name</name><surname>surname</surname></persName>
+               <persName xml:lang="fr" ref="#person1">
+                     <forename>name</forename><surname>surname</surname></persName>
                <placeName>
                   <settlement type="city" ref="#place1">city</settlement>
                </placeName>
                <date when="1900-01-01">number<hi rend="superscript">th</hi> month year</date>
             </correspAction>
             <correspAction type="received">
-               <persName xml:lang="fr" ref="#person2"
-                  ><name>name</name><surname>surname</surname></persName>
+               <persName xml:lang="fr" ref="#person2">
+                  <forename>name</forename><surname>surname</surname></persName>
                <placeName xml:lang="fr">
                   <address>
                      <street><num>street number</num>, street name</street>

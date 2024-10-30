@@ -64,7 +64,7 @@
 
 <!ELEMENT title (#PCDATA|hi)*>
 
-<!ELEMENT opener (pb,dateline,address,lb,salute)>
+<!ELEMENT opener (pb,dateline,address*,lb,salute)>
 
 <!ELEMENT pb EMPTY>
 <!ATTLIST pb n CDATA #REQUIRED>
@@ -84,7 +84,7 @@
 
 <!ELEMENT lb EMPTY>
 
-<!ELEMENT closer (salute,signed,address)>
+<!ELEMENT closer (salute,signed*,address*)>
 
 <!ELEMENT signed (#PCDATA)>
 
@@ -95,7 +95,7 @@
 <!ELEMENT person (persName,birth,death)>
 <!ATTLIST person xml:id NMTOKEN #REQUIRED>
 
-<!ELEMENT persName (#PCDATA|roleName|forename|name|surname)*>
+<!ELEMENT persName (#PCDATA|roleName|forename|surname)*>
 <!ATTLIST persName ref CDATA #IMPLIED>
 <!ATTLIST persName xml:lang NMTOKEN #IMPLIED>
 
