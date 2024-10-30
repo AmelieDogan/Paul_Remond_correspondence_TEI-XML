@@ -56,7 +56,6 @@
                <date>unknown</date>
             </correspAction>
          </correspDesc>
-
          <correspDesc xml:id="corresp2">
             <correspAction type="sent">
                <persName xml:lang="fr" ref="#person2"

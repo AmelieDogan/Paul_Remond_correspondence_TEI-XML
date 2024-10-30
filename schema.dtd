@@ -29,7 +29,7 @@
 <!ATTLIST country key NMTOKEN #IMPLIED>
 
 <!ELEMENT settlement (#PCDATA)>
-<!ATTLIST settlement ref CDATA #IMPLIED>
+<!ATTLIST settlement ref IDREF #IMPLIED>
 <!ATTLIST settlement type NMTOKEN #IMPLIED>
 
 <!ELEMENT repository (#PCDATA)>
@@ -40,7 +40,7 @@
 <!ELEMENT profileDesc (correspDesc)+>
 
 <!ELEMENT correspDesc (correspAction+,correspContext?)>
-<!ATTLIST correspDesc xml:id NMTOKEN #REQUIRED>
+<!ATTLIST correspDesc xml:id ID #REQUIRED>
 
 <!ELEMENT correspAction (persName,placeName,date)>
 <!ATTLIST correspAction type NMTOKEN #REQUIRED>
@@ -93,10 +93,10 @@
 <!ELEMENT listPerson (person)+>
 
 <!ELEMENT person (persName,birth,death)>
-<!ATTLIST person xml:id NMTOKEN #REQUIRED>
+<!ATTLIST person xml:id ID #REQUIRED>
 
 <!ELEMENT persName (#PCDATA|roleName|forename|surname)*>
-<!ATTLIST persName ref CDATA #IMPLIED>
+<!ATTLIST persName ref IDREF #IMPLIED>
 <!ATTLIST persName xml:lang NMTOKEN #IMPLIED>
 
 <!ELEMENT name (#PCDATA)>
@@ -114,10 +114,10 @@
 <!ELEMENT listPlace (place)+>
 
 <!ELEMENT place (placeName)>
-<!ATTLIST place xml:id NMTOKEN #REQUIRED>
+<!ATTLIST place xml:id ID #REQUIRED>
 
 <!ELEMENT placeName (#PCDATA|address|lb|settlement)*>
-<!ATTLIST placeName ref CDATA #IMPLIED>
+<!ATTLIST placeName ref IDREF #IMPLIED>
 <!ATTLIST placeName xml:lang NMTOKEN #IMPLIED>
 
 <!ELEMENT address (persName,roleName,street,settlement,country)?>
@@ -129,9 +129,9 @@
 <!ELEMENT listOrg (org)+>
 
 <!ELEMENT org (orgName,desc)>
-<!ATTLIST org xml:id NMTOKEN #REQUIRED>
+<!ATTLIST org xml:id ID #REQUIRED>
 
 <!ELEMENT orgName (#PCDATA)>
-<!ATTLIST orgName ref CDATA #IMPLIED>
+<!ATTLIST orgName ref IDREF #IMPLIED>
 
 <!ELEMENT desc (#PCDATA)>
